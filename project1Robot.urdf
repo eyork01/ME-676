@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<robot name="ThreeLinkPlanar">
+<!--BASE PLATE-->
+    <link name="base_link">
+
+    </link>
+
+    <!--LINK 1-->
+    <link name="link1">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.25"/>
+            <geometry> <box size="0.05 0.05 0.5" /></geometry>
+            <material name="red">  <color rgba="1 0 0 1" /></material>
+        </visual>
+    </link>
+    <joint name="shoulder" type="continuous">
+        <parent link="base_link" />
+        <child link="link1" />
+        <origin xyz="0 0 0" rpy = "0 0 0"/> <!--Only change this line on each link-->
+        <axis xyz="0 0 1" />   <!--For an external control?-->
+        <dynamics damping="0.1" />
+    </joint>
+
+    <!--LINK 2-->
+    <link name="link_2">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.25"/>
+            <geometry> <box size="0.05 0.05 0.5" /></geometry>
+            <material name="green">  <color rgba="0 1 0 1" /></material>
+        </visual>
+    </link>
+    <joint name="shoulder_2" type="continuous">
+        <parent link="link1" />
+        <child link="link_2" />
+        <origin xyz="0 0 0.5" rpy = "0.7854 0 0"/> <!--Axis origin a rotation-->
+        <axis xyz="0 0 1" />   <!--For an external control?-->
+        <dynamics damping="0.1" />
+    </joint>
+
+    <!--LINK 3-->
+    <link name="link_3">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.25"/>
+            <geometry> <box size="0.05 0.05 0.5" /></geometry>
+            <material name="blue">  <color rgba="0 0 1 1" /></material>
+        </visual>
+    </link>
+    <joint name="shoulder_3" type="continuous">
+        <parent link="link_2" />
+        <child link="link_3" />
+        <origin xyz="0 0 0.5" rpy = "0.7854 0 0"/> <!--Axis origin a rotation-->
+        <axis xyz="0 0 1" />   <!--For an external control?-->
+        <dynamics damping="0.1" />
+    </joint>
+
+    <!--LINK 4-->
+    <link name="link_4">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.25"/>
+            <geometry> <box size="0.05 0.05 0.5" /></geometry>
+            <material name="blue">  <color rgba="0 0 1 1" /></material>
+        </visual>
+    </link>
+    <joint name="shoulder_4" type="continuous">
+        <parent link="link_3" />
+        <child link="link_4" />
+        <origin xyz="0 0 0.5" rpy = "0.7854 0 0"/> <!--Axis origin a rotation-->
+        <axis xyz="0 0 1" />   <!--For an external control?-->
+        <dynamics damping="0.1" />
+    </joint>
+
+    <!--LINK 5-->
+    <link name="link_5">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.25"/>
+            <geometry> <box size="0.05 0.05 0.5" /></geometry>
+            <material name="blue">  <color rgba="0 0 1 1" /></material>
+        </visual>
+    </link>
+    <joint name="shoulder_5" type="continuous">
+        <parent link="link_4" />
+        <child link="link_5" />
+        <origin xyz="0 0 0.5" rpy = "0.7854 0 0"/> <!--Axis origin a rotation-->
+        <axis xyz="0 0 1" />   <!--For an external control?-->
+        <dynamics damping="0.1" />
+    </joint>
+
+    <!--LINK 51-->
+    <link name="link_51">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.25"/>
+            <geometry> <box size="0.05 0.05 0.5" /></geometry>
+            <material name="blue">  <color rgba="0 0 1 1" /></material>
+        </visual>
+    </link>
+    <joint name="shoulder_51" type="continuous">
+        <parent link="link_5" />
+        <child link="link_51" />
+        <origin xyz="0 0 0.5" rpy = "0.7854 0 0"/> <!--Axis origin a rotation-->
+        <axis xyz="0 0 1" />   <!--For an external control?-->
+        <dynamics damping="0.1" />
+    </joint>
+
+       
+
+    <!--LINK 6-->
+    <link name="link_6">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.25"/>
+            <geometry> <box size="0.05 0.05 0.5" /></geometry>
+            <material name="green">  <color rgba="0 1 0 1" /></material>
+        </visual>
+    </link>
+    <joint name="shoulder_6" type="continuous">
+        <parent link="link1" />
+        <child link="link_6" />
+        <origin xyz="0 0 0.5" rpy = "-0.7854 0 0"/> <!--Axis origin a rotation-->
+        <axis xyz="0 0 1" />   <!--For an external control?-->
+        <dynamics damping="0.1" />
+    </joint>
+
+    <!--LINK 7-->
+    <link name="link_7">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.25"/>
+            <geometry> <box size="0.05 0.05 0.5" /></geometry>
+            <material name="blue">  <color rgba="0 0 1 1" /></material>
+        </visual>
+    </link>
+    <joint name="shoulder_7" type="continuous">
+        <parent link="link_6" />
+        <child link="link_7" />
+        <origin xyz="0 0 0.5" rpy = "-0.7854 0 0"/> <!--Axis origin a rotation-->
+        <axis xyz="0 0 1" />   <!--For an external control?-->
+        <dynamics damping="0.1" />
+    </joint>
+
+    <!--LINK 8-->
+    <link name="link_8">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.25"/>
+            <geometry> <box size="0.05 0.05 0.5" /></geometry>
+            <material name="blue">  <color rgba="0 0 1 1" /></material>
+        </visual>
+    </link>
+    <joint name="shoulder_8" type="continuous">
+        <parent link="link_7" />
+        <child link="link_8" />
+        <origin xyz="0 0 0.5" rpy = "-0.7854 0 0"/> <!--Axis origin a rotation-->
+        <axis xyz="0 0 1" />   <!--For an external control?-->
+        <dynamics damping="0.1" />
+    </joint>
+
+    <!--LINK 9-->
+    <link name="link_9">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.25"/>
+            <geometry> <box size="0.05 0.05 0.5" /></geometry>
+            <material name="blue">  <color rgba="0 0 1 1" /></material>
+        </visual>
+    </link>
+    <joint name="shoulder_9" type="continuous">
+        <parent link="link_8" />
+        <child link="link_9" />
+        <origin xyz="0 0 0.5" rpy = "0.7854 0 0"/> <!--Axis origin a rotation-->
+        <axis xyz="0 0 1" />   <!--For an external control?-->
+        <dynamics damping="0.1" />
+    </joint>
+
+    <!--LINK 10-->
+    <link name="link_10">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.25"/>
+            <geometry> <box size="0.05 0.05 0.5" /></geometry>
+            <material name="blue">  <color rgba="0 0 1 1" /></material>
+        </visual>
+    </link>
+    <joint name="shoulder_10" type="continuous">
+        <parent link="link_9" />
+        <child link="link_10" />
+        <origin xyz="0 0 0.5" rpy = "0.7854 0 0"/> <!--Axis origin a rotation-->
+        <axis xyz="0 0 1" />   <!--For an external control?-->
+        <dynamics damping="0.1" />
+    </joint>
+
+    <!--End Effector 2-->
+      <link name="endeffector2">
+    <inertial>
+      <origin xyz="0.0 0 0" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0 0.025"/>
+      <geometry>  <box size="0.05 0.05 0.05" /> </geometry>
+      <material name="pink"> <color rgba="1 0.7 0.7 1" /> </material>
+    </visual>
+    </link>
+
+    <joint name="endjoint2" type="fixed">
+    <parent link="link_10" />
+    <child link="endeffector2" />
+    <origin xyz="0.0 0.0 0.5" rpy="0 0 0 "/>
+    </joint>
+
+ <!--End Effector 1-->
+      <link name="endeffector1">
+    <inertial>
+      <origin xyz="0.0 0 0" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0 0.025"/>
+      <geometry>  <box size="0.05 0.05 0.05" /> </geometry>
+      <material name="pink"> <color rgba="1 0.7 0.7 1" /> </material>
+    </visual>
+    </link>
+
+    <joint name="endjoint1" type="fixed">
+    <parent link="link_51" />
+    <child link="endeffector1" />
+    <origin xyz="0.0 0.0 0.5" rpy="0 0 0 "/>
+    </joint>
+
+
+</robot> 
+
+<!-- setVisconfig([0.3],state,mvis)-->
+<!--mvis, mechanism=display_urdf("planar3R.urdf",vis)-->
+<!--state=MechanismState(mechanism)-->
+<!--set_configuration!(state,[0.5,0.5,0.5])-->
+<!--configuration(state)-->
+<!--set_configuration!(mvis,configuration(state))-->
