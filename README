@@ -1,0 +1,3 @@
+Running this project requires Julia with the rigidBodyDynamics, and linearAlgebra packages installed.
+
+To run this project, simply include("project1.jl")
