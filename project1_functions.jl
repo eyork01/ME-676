@@ -22,6 +22,17 @@ function request_input()
     return xin
 end
 
+# Returns end-effector frame position in world frame
+function calcXinW(state,x)
+    mechanism = state.mechanism;
+    ee_frame=default_frame(bodies(mechanism)[end])
+    base_frame = default_frame(bodies(mechanism)[1])
+    # Obtain the transformation from world to EE
+    EEinBase = relative_transform(state,base_frame,ee_frame)
+    x_in_w = inv(EEinBase)*x
+    return x_in_w
+end
+
 # Load mechanism and visualize at q=0 config
 delete!(vis)
 mvis, mechanism = display_urdf("project1Robot.urdf",vis)

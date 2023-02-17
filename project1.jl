@@ -37,12 +37,3 @@ for i = 0:100
     update_planar_state(state,mvis,q)                                                       
     sleep(0.1)  # Add small delay for animation
 end
-
-
-
-#= NOTES
-ef2 = findbody(robot, "endeffector")
-base_frame = default_frame(bodies(robot)[1])
-#global J = Matrix(geometric_jacobian(state, path1))[1:3,:]   #Jp = point_jacobian(state, p, transform(state, point, world))
-desiredX = vcat(Point3D(base_frame,xin[1],xin[2],xin[3]).v.data...)
-=#
