@@ -4,6 +4,7 @@
 # ME 676, Dr. Poonawala
 # February 17, 2023
 
+include("startup.jl")
 include("project1_functions.jl")
 using LinearAlgebra
 using RigidBodyDynamics
