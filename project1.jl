@@ -21,7 +21,7 @@ println("Initial q: ",q)
 # Main Loop
 for i = 0:100
     # Calculate new delta X and Jacobian
-    local currentX = vcat(calcXinW(state,ee_point).v.data...)
+    global currentX = vcat(calcXinW(state,ee_point).v.data...)
     local dx = -(currentX-desiredX)
     println("ΔX ",i," : ", dx)
     local J = Matrix(point_jacobian(state, path1, transform(state, ee_point, base_frame)))[1:3,:]
