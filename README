@@ -3,7 +3,7 @@
 
 Julia is required to run this folder, the minimum package requirements include RigidBodyDynamics, LinearAlgebra, StaticArrays, RigidBodySim, MeshCat, MeshCatMechanisms, Gadfly, Cairo, and Fontconfig. The files in this folder require environments contained in the ode folder to run correctly, run the files while in the odes folder inside Julia REPL. 
 
-The entire folder must be downloaded to run the project by the command include("project1.jl"). After running the command, the user must input the desired X, Y, and Z coordinates of the endeffector of the robot in the terminal, then navigate to the visualizer to watch the animation of the robot moving from the current endeffector position to the desired input. The range of valid coordinate values for X, Y, and Z inputs must satisfy the equation (X)^2 + (Y)^2 + (z-0.5)^2 <= (2.55)^2. The suggested end effector positions for testing include (-1, 2, 1) and (-1.5, 1.5, 1.5).
+The entire folder must be downloaded to run the project by the command include("project1.jl"). After running the command, the user must input the desired X, Y, and Z coordinates of the endeffector of the robot in the terminal, then navigate to the visualizer to watch the animation of the robot moving from the current endeffector position to the desired input. A short list of the suggested (X, Y, Z) end effector positions for testing include (-1, 2, 1), (1, -1, 0) and (-1.5, 1.5, 1.5).
 
 ## File Descriptions
 
